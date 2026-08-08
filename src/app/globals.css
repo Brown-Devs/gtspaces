@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: "Inter", system-ui, sans-serif;
+  --font-playfair: "Playfair Display", Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream text-ink-900 antialiased pb-16 lg:pb-0;
+}
+
+::selection {
+  @apply bg-gold-300 text-ink-900;
+}
+
+/* Reveal-on-scroll utility used with IntersectionObserver hook */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section container */
+.container-x {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+}
+
+.section-y {
+  @apply py-16 sm:py-20 lg:py-28;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-7 py-3.5 text-sm font-semibold tracking-wide text-ink-900 shadow-gold transition-transform duration-300 hover:scale-[1.03] active:scale-95;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/40 px-7 py-3.5 text-sm font-semibold tracking-wide text-white transition-colors duration-300 hover:bg-white hover:text-ink-900;
+}
+
+.btn-outline-dark {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-900/20 px-7 py-3.5 text-sm font-semibold tracking-wide text-ink-900 transition-colors duration-300 hover:bg-ink-900 hover:text-white;
+}
+
+.eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.25em] text-gold-600;
+}
+
+.card-premium {
+  @apply rounded-3xl border border-ink-900/5 bg-white shadow-premium;
+}
+
+/* Marquee for logos / stats strip */
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
